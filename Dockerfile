@@ -1,6 +1,9 @@
 FROM node:18  
-WORKDIR /app 
+WORKDIR /app/server
+
 COPY server/package.json server/package-lock.json ./ 
 RUN npm install 
+
 COPY server/ .  
-CMD ["node", "server/server.js"]
+
+CMD ["node", "server.js"]
