@@ -51,8 +51,3 @@ primary_region = "sin"
   memory = "1gb"
   cpu_kind = "shared"
   cpus = 1
-
-[http_service.concurrency]
-  type = "requests"
-  soft_limit = 50
-  hard_limit = 100
