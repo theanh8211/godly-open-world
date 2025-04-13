@@ -19,8 +19,8 @@ const server = http.createServer((req, res) => {
 const wss = new WebSocket.Server({ server });
 
 const PORT = process.env.PORT || 8080;
-const USER_FILE = './data/users.json';
-const MAP_FILE = './data/maps.json';
+const USER_FILE = process.env.NODE_ENV === 'production' ? '/data/users.json' : './data/users.json';
+const MAP_FILE = process.env.NODE_ENV === 'production' ? '/data/maps.json' : './data/maps.json';
 
 let users = {}, onlinePlayers = {}, tiles = [], parties = {};
 const connectionLimits = new Map();
